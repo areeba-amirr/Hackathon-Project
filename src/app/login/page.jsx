@@ -1,0 +1,50 @@
+import Link from 'next/link';
+
+export default function LoginPage() {
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center p-6">
+      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+        <div className="text-center mb-8">
+          <div className="text-4xl text-primary font-bold mb-2 flex items-center justify-center gap-2">
+            <span>💊</span> MediSnap
+          </div>
+          <h1 className="text-2xl font-bold text-text">Welcome Back</h1>
+          <p className="text-muted">Login to your account</p>
+        </div>
+
+        <form className="space-y-4">
+          <div>
+            <input
+              type="email"
+              placeholder="Email address"
+              className="w-full rounded-lg border p-3 focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Password"
+              className="w-full rounded-lg border p-3 focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+          </div>
+          <Link href="/dashboard" className="block w-full bg-primary text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+            Login
+          </Link>
+        </form>
+
+        <div className="mt-6 text-center text-sm">
+          <span className="text-muted">Don't have an account? </span>
+          <Link href="/signup" className="text-primary font-medium hover:underline">
+            Sign up
+          </Link>
+        </div>
+
+        <div className="my-6 border-t border-gray-200"></div>
+
+        <button className="w-full border border-gray-300 bg-white text-text py-3 rounded-lg font-medium hover:bg-gray-50 transition flex items-center justify-center gap-2">
+          <span className="text-lg">G</span> Continue with Google
+        </button>
+      </div>
+    </div>
+  );
+}
